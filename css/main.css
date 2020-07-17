@@ -1,0 +1,108 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: url(../img/wrapperBackground.svg);
+    background-size: cover;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: space-around;
+    height: 90%;
+    width: 100%;
+}
+.main .turn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    width: 52%;
+    margin: 2% 0;
+}
+.main .turn .time{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    color: white;
+    font-family: 'Mukta', sans-serif;
+}
+.main .turn .time .chronometer{
+    display: flex;
+    flex-direction: row;
+}
+.main .board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/boardBackground.svg);
+    border-radius: 5%;
+    padding: 0 2%;
+    width: 50%;
+    height: 70%;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    width: 100%;
+}
+.footer .btnRight, .footer .btnLeft{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+}
+.footer .btnRight{
+    justify-content: space-around;
+}
+.buttonMain{
+    width: 30%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+.buttonMain:hover{
+    background-color: grey;
+}
+@media(max-width: 1020px){
+    .main{
+        width: 100%;
+        height: 100%;
+    }
+    .main .board{
+        width: 75%;
+        height: 60%;
+    }
+    .footer .btnRight, .footer .btnLeft{
+        width: 50%;
+        height: 100%;
+    }
+}
+@media(max-width: 650px){
+    .main{
+        width: 100%;
+        height: 100%;
+    }
+    .main .board{
+        width: 95%;
+        height: 60%;
+    }
+    .footer .btnRight, .footer .btnLeft{
+        width: 50%;
+        height: 100%;
+    }
+}
+
+
