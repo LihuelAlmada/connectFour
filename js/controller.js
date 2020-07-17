@@ -12,4 +12,5 @@ var goHome = function(){
     document.getElementsByClassName('main')[0].style.display = 'flex';
     document.getElementsByClassName('footer')[0].style.display = 'flex';
     document.getElementsByClassName('window')[0].style.display = 'none';
+    render();
   }

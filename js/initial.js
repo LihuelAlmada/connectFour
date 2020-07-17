@@ -1,22 +1,12 @@
-var boardHTML = null,
-    timeP1HTML = null,
+var timeP1HTML = null,
     timeP2HTML = null,
     timeMP1HTML = null,
     timeSP1HTML = null,
     timeMP2HTML = null,
-    timeSP2HTML = null,
-    boardArray = [
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        [null, null, null, null, null, null],
-        ];
-
+    turn = 'blue',
+    timeSP2HTML = null;
 var init = function () {
-    console.log('Initial');
+    turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');
     timeP1HTML = document.getElementById('timeP1');
     timeP2HTML = document.getElementById('timeP2');
