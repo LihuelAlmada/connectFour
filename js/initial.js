@@ -28,5 +28,10 @@ var init = function () {
     contact = document.getElementById('contact');
     home = document.getElementById('home');
     back = document.getElementById('back');
+    Players2.onclick = goGame;
+    contact.onclick = goContact;
+    home.onclick = goHome;
+    back.onclick = goHome;
+    goHome();
 }
 window.onload = init;
