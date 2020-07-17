@@ -3,10 +3,9 @@ var timeP1HTML = null,
     timeMP1HTML = null,
     timeSP1HTML = null,
     timeMP2HTML = null,
-    turn = 'blue',
     timeSP2HTML = null;
 var init = function () {
-    turn = Math.random() > 0.5 ? 'blue' : 'green';
+    turn = turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');
     timeP1HTML = document.getElementById('timeP1');
     timeP2HTML = document.getElementById('timeP2');

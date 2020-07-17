@@ -14,6 +14,7 @@ var columnEventHandler = function (e) {
     for (var i = 0; i < boardArray[columnId].length; i++) {
         if (!boardArray[columnId][i]) {
             boardArray[columnId][i] = turn;
+            toggleTurn();
             render();
             break;
         }
