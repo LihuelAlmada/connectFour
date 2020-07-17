@@ -2,6 +2,7 @@ var goHome = function(){
     document.getElementsByClassName('main')[0].style.display = 'none';
     document.getElementsByClassName('footer')[0].style.display = 'none';
     document.getElementById('contactWindow').style.display= 'none';
+    document.getElementById('winWindows').style.display= 'none';
     document.getElementById('initialWindow').style.display= 'flex';
   }
   var goContact = function(){
@@ -13,4 +14,9 @@ var goHome = function(){
     document.getElementsByClassName('footer')[0].style.display = 'flex';
     document.getElementsByClassName('window')[0].style.display = 'none';
     render();
+  }
+  var goWin = function(){
+    document.getElementsByClassName('main')[0].style.display = 'none';
+    document.getElementsByClassName('footer')[0].style.display = 'none';
+    document.getElementById('winWindows').style.display= 'flex';
   }

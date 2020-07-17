@@ -5,7 +5,6 @@ var turn = 'blue',
     acumMP2 = 0,
     ChronometerP1,
     ChronometerP2;
-
 var stopChronometer = function () {
     clearInterval(ChronometerP1);
     clearInterval(ChronometerP2);
