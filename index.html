@@ -6,19 +6,29 @@
     <title>Connect Four</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/windows.css">
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/board.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/initial.js"></script>
 </head>
 <body>
+    <!--I start the body with a wrapper that contains literally everything,
+        the windows or menus and the game itself-->
     <div class="wrapper">
+        <!--initialWindow is the first window that is shown in the game, 
+            where there are buttons to select if you play as 2 or 3 players,
+            and one that sends you to the contact window-->
         <div id="initialWindow" class="window">
+            <h2>CONNECT FOUR</h2>
             <button id="Players2" class="buttonWindow">2 Players</button>
             <button id="Players3" class="buttonWindow">3 Players</button>
             <button id="contact" class="buttonWindow">Contact</button>
         </div>
+        <!--main is the container of the game itself,
+            here is turn and board-->
         <div class="main">
+            <!--turn is where each player's time and turn are displayed-->
             <div class="turn">
                 <div id="timeP1" class="time">
                     <div class="nameP1">Name</div>
@@ -39,8 +49,10 @@
                     <div class="labelTime">Player 2</div>
                 </div>
             </div>
+            <!--board is the board of the game-->
             <div id="board" class="board"></div>
         </div>
+        <!--footer is where the buttons are, to go back, save and load the game-->
         <div class="footer">
             <div class="btnLeft">
             <button id="home" class="buttonMain">Home</button>
@@ -50,10 +62,21 @@
             <button id="load" class="buttonMain">Load</button>
             </div>
         </div>
+        <!--this window appears when there is a winner-->
         <div id="winWindows" class="window"></div>
+        <!--this window appears when the contact button is pressed in the initialWindow-->
         <div id="contactWindow" class="window">
-            <button id="back" class="buttonWindow">Back</button>
-            <button id="send" class="buttonWindow">Send</button>
+            <h2>CONTACT</h2>
+            <label for="name">Name</label>
+            <input id="name" class="entry" type="text" name="name">
+            <label for="email">Email</label>
+            <input id="email" class="entry" type="text" name="email">
+            <label for="message">Message</label>
+            <textarea id="message" class="entry" name="message"></textarea>
+            <div class="footerWindow">
+            <button id="back" class="buttonWindow buttonContact">Back</button>
+            <button id="send" class="buttonWindow buttonContact">Send</button>
+            </div>
         </div>
     </div>
 </body>
