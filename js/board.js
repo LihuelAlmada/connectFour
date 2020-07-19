@@ -14,7 +14,8 @@ var checkGameStatus = function () {
         for (var j = 0; j < 4; j++) {
         if (boardArray[i][j]) {
             if (boardArray[i][j] === (boardArray[i][j + 1]) && boardArray[i][j] === (boardArray[i][j + 2]) && boardArray[i][j] === (boardArray[i][j + 3])) {
-                winWindows.innerHTML = ('You win ' + turn);
+                winHTML.innerHTML = ('You win ' + turn);
+                winDescHTML.innerHTML = ('Congratulations, placed four ' + turn + ' tiles online before your opponent!!!');
                 goWin();
             }
         }
@@ -24,11 +25,13 @@ var checkGameStatus = function () {
         for (var j = 0; j < 4; j++) {
             if (boardArray[i][j]) {
                 if (boardArray[i][j] === (boardArray[i + 1][j]) && boardArray[i][j] === (boardArray[i + 2][j]) && boardArray[i][j] === (boardArray[i + 3][j])) {
-                    winWindows.innerHTML = ('You win ' + turn);
+                    winHTML.innerHTML = ('You win ' + turn);
+                    winDescHTML.innerHTML = ('Congratulations, placed four ' + turn + ' tiles online before your opponent!!!');
                     goWin();
                 }
                 if (boardArray[i][j] === (boardArray[i + 1][j + 1]) && boardArray[i][j] === (boardArray[i + 2][j + 2]) && boardArray[i][j] === (boardArray[i + 3][j + 3])) {
-                    winWindows.innerHTML = ('You win ' + turn);
+                    winHTML.innerHTML = ('You win ' + turn);
+                    winDescHTML.innerHTML = ('Congratulations, placed four ' + turn + ' tiles online before your opponent!!!');
                     goWin();
                 }
             }
@@ -38,7 +41,8 @@ var checkGameStatus = function () {
         for (var j = 3; j < 7; j++) {
             if (boardArray[i][j]) {
                 if (boardArray[i][j] === (boardArray[i + 1][j - 1]) && boardArray[i][j] === (boardArray[i + 2][j - 2]) && boardArray[i][j] === (boardArray[i + 3][j - 3]) ) {
-                    winWindows.innerHTML = ('You win ' + turn);
+                    winHTML.innerHTML = ('You win ' + turn);
+                    winDescHTML.innerHTML = ('Congratulations, placed four ' + turn + ' tiles online before your opponent!!!');
                     goWin();
                 }
             }
