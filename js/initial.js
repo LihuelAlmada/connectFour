@@ -1,12 +1,8 @@
-var timeP1HTML = null,
-    timeP2HTML = null,
-    timeMP1HTML = null,
-    timeSP1HTML = null,
-    timeMP2HTML = null,
-    timeSP2HTML = null,
-    winHTML = null,
-    winDescHTML = null;
-var init = function () {
+/*  In this file, each variable is added with its respective HTML element, 
+    and the variable turn is initialized randomly, starts the onclick events 
+    and run the goHome function. 
+    all variables with HTML in their name, refers to the dom element */
+var init = function(){
     turn = turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');
     winHTML = document.getElementById('winText');
@@ -22,7 +18,7 @@ var init = function () {
     contact = document.getElementById('contact');
     home = document.getElementById('home');
     back = document.getElementById('back');
-    newGame.onclick = goHome;
+    newGame.onclick = goHome; 
     Players2.onclick = goGame;
     contact.onclick = goContact;
     home.onclick = goHome;

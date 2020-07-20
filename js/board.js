@@ -1,5 +1,8 @@
+//  all variables with HTML in their name, refers to the dom element
 var boardHTML = null,
     columnsHTML = null,
+    winHTML = null,
+    winDescHTML = null,
     boardArray = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -9,7 +12,8 @@ var boardHTML = null,
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
     ];
-var checkGameStatus = function () {
+//  search for 4 online or draws
+var checkGameStatus = function(){
     var k = 0,
         l = boardArray.length;
     for (var i = 0; i < l; i++) {
@@ -53,30 +57,18 @@ var checkGameStatus = function () {
     for (var i = 0; i < l; i++){
         for (var j = boardArray[i].length-1; j < boardArray[i].length; j++){
             if (boardArray[i][j]){
-                if (boardArray[i][j] !== null ){
-                    console.log('Entra ' + k + l);
-                    k++;
-                    if(k===l){
-                        winHTML.innerHTML = ('DRAW');
-                        winDescHTML.innerHTML = ('No more space for tiles!');
-                        goWin();
-                    }
+                k++;
+                if(k===l){
+                    winHTML.innerHTML = ('DRAW');
+                    winDescHTML.innerHTML = ('No more space for tiles!');
+                    goWin();
                 }
             }
         }
     }
-
-
-    /*for (var i = 0; i < l; i++){
-        for (var j = 0; j < boardArray[i].length; j++){
-            if (boardArray[i][j]){
-                if (boardArray[i][j] == !null ){
-                    console.log('Hola');
-                }
-            }
-        }
-    }*/
 }
+/*  trim the string id, showing only the second element, which is the column, 
+    then look for the first empty box in that column and run the corresponding events*/
 var columnEventHandler = function (e) {
     var columnId = e.target.id.substr(1, 1);
     for (var i = 0; i < boardArray[columnId].length; i++) {
@@ -89,15 +81,17 @@ var columnEventHandler = function (e) {
         }
     }
 }
+//  add event onclick to all columns creates
 var bindColumnHandlers = function () {
     columnsHTML = document.getElementsByClassName('column');
     for (var i = 0; i < columnsHTML.length; i++) {
         columnsHTML[i].onclick = columnEventHandler;
     }
 }
-var render = function () {
+//  generates HTML content in the board
+var render = function(){ 
     var html = '';
-    for (var i = 0; i < boardArray.length; i++) {
+    for (var i = 0; i < boardArray.length; i++){
         html += '<div id="c' + i + '" class="column">';
         for (var j = boardArray[i].length - 1; j >= 0; j--) {
             html += '<div id="s' + i + j + '" class="spot';
