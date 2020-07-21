@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/windows.css">
+    <script type="text/javascript" src="js/localStorage.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/board.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
@@ -62,6 +63,15 @@
             <button id="load" class="buttonMain">Load</button>
             </div>
         </div>
+        <!--this window appears when press the Load button-->
+        <div id="loadWindows" class="window">
+            <h2> Saved Games</h2>
+            <div id="savedGames"></div>
+            <div class="footerWindow">
+                <button id="backLoad" class="buttonWindow buttonContact">Back</button>
+                <button id="sendLoad" class="buttonWindow buttonContact">Load</button>
+            </div>
+        </div>
         <!--this window appears when there is a winner-->
         <div id="winWindows" class="window">
             <h2 id="winText"></h2>
@@ -78,8 +88,8 @@
             <label for="message">Message</label>
             <textarea id="message" class="entry" name="message"></textarea>
             <div class="footerWindow">
-            <button id="back" class="buttonWindow buttonContact">Back</button>
-            <button id="send" class="buttonWindow buttonContact">Send</button>
+            <button id="backContact" class="buttonWindow buttonContact">Back</button>
+            <button id="sendContact" class="buttonWindow buttonContact">Send</button>
             </div>
         </div>
     </div>

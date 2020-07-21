@@ -13,7 +13,7 @@ var boardHTML = null,
     [null, null, null, null, null, null],
     ];
 //  search for 4 online or draws
-var checkGameStatus = function(){
+var checkGameStatus = function() {
     var k = 0,
         l = boardArray.length;
     for (var i = 0; i < l; i++) {
@@ -54,11 +54,11 @@ var checkGameStatus = function(){
             }
         }
     }
-    for (var i = 0; i < l; i++){
-        for (var j = boardArray[i].length-1; j < boardArray[i].length; j++){
-            if (boardArray[i][j]){
+    for (var i = 0; i < l; i++) {
+        for (var j = boardArray[i].length-1; j < boardArray[i].length; j++) {
+            if (boardArray[i][j]) {
                 k++;
-                if(k===l){
+                if(k===l) {
                     winHTML.innerHTML = ('DRAW');
                     winDescHTML.innerHTML = ('No more space for tiles!');
                     goWin();
@@ -89,9 +89,9 @@ var bindColumnHandlers = function () {
     }
 }
 //  generates HTML content in the board
-var render = function(){ 
+var render = function() { 
     var html = '';
-    for (var i = 0; i < boardArray.length; i++){
+    for (var i = 0; i < boardArray.length; i++) {
         html += '<div id="c' + i + '" class="column">';
         for (var j = boardArray[i].length - 1; j >= 0; j--) {
             html += '<div id="s' + i + j + '" class="spot';

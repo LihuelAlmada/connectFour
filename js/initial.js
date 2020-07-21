@@ -2,7 +2,7 @@
     and the variable turn is initialized randomly, starts the onclick events 
     and run the goHome function. 
     all variables with HTML in their name, refers to the dom element */
-var init = function(){
+var init = function() {
     turn = turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');
     winHTML = document.getElementById('winText');
@@ -17,12 +17,21 @@ var init = function(){
     Players2 = document.getElementById('Players2');
     contact = document.getElementById('contact');
     home = document.getElementById('home');
-    back = document.getElementById('back');
+    backContact = document.getElementById('backContact');
+    backLoad = document.getElementById('backLoad');
+    sendLoad = document.getElementById('sendLoad');
+    load = document.getElementById('load');
+    save = document.getElementById('save');
     newGame.onclick = goHome; 
     Players2.onclick = goGame;
     contact.onclick = goContact;
     home.onclick = goHome;
-    back.onclick = goHome;
+    backContact.onclick = goHome;
+    backLoad.onclick = goGame;
+    save.onclick = saveGame;
+    load.onclick = goLoad;
+    //sendLoad.onclick = loadGame;
+    saveGame()
     goHome();
 }
 window.onload = init;

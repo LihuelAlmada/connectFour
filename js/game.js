@@ -13,16 +13,16 @@ var turn = 'blue',
     timeMP2HTML = null,
     timeSP2HTML = null;
 //  Stop all Chronometers
-var stopChronometer = function(){
+var stopChronometer = function() {
     clearInterval(ChronometerP1);
     clearInterval(ChronometerP2);
 }
 //  Star the Chronometer, depending on the turn
-var startChronometer = function(){
+var startChronometer = function() {
     if(turn === 'blue'){
         ChronometerP1 = setInterval(
-        function(){
-            if (acumSP1 == 60){
+        function() {
+            if (acumSP1 == 60) {
                 acumSP1 = 0;
                 acumMP1++;
                 timeMP1HTML.innerHTML = acumMP1;
@@ -30,10 +30,10 @@ var startChronometer = function(){
             timeSP1HTML.innerHTML = acumSP1;
             acumSP1++;
         },1000);
-    }else if (turn === 'green'){
+    }else if (turn === 'green') {
         ChronometerP2 = setInterval(
-        function(){
-            if (acumSP2 == 60){
+        function() {
+            if (acumSP2 == 60) {
                 acumSP2 = 0;
                 acumMP2++;
                 timeMP2HTML.innerHTML = acumMP2;
@@ -43,7 +43,7 @@ var startChronometer = function(){
         },1000);
     }
 }
-var toggleTurn = function(){
+var toggleTurn = function() {
     stopChronometer();
     if(turn === 'blue'){
         turn='green';
