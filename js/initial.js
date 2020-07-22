@@ -3,7 +3,7 @@
     and run the goHome function. 
     all variables with HTML in their name, refers to the dom element */
 var init = function(){
-    turn = turn = Math.random() > 0.5 ? 'blue' : 'green';
+    turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');
     winHTML = document.getElementById('winText');
     winDescHTML = document.getElementById('winDescription');
@@ -23,8 +23,8 @@ var init = function(){
     savedGamesHTML = document.getElementById('savedGames');
     load = document.getElementById('load');
     save = document.getElementById('save');
-    newGame.onclick = goHome; 
-    Players2.onclick = goGame;
+    newGame.onclick = loadNewGame; 
+    Players2.onclick = loadNewGame;
     contact.onclick = goContact;
     home.onclick = goHome;
     backContact.onclick = goHome;

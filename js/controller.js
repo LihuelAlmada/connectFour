@@ -16,6 +16,7 @@ var goGame = function(){
 	document.getElementsByClassName('footer')[0].style.display = 'flex';
 	document.getElementsByClassName('window')[0].style.display = 'none';
 	document.getElementById('loadWindows').style.display= 'none';
+	document.getElementById('winWindows').style.display= 'none';
 	renderBoard();
 }
 var goWin = function(){
