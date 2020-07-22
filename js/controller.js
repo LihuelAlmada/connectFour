@@ -16,7 +16,7 @@ var goGame = function(){
 	document.getElementsByClassName('footer')[0].style.display = 'flex';
 	document.getElementsByClassName('window')[0].style.display = 'none';
 	document.getElementById('loadWindows').style.display= 'none';
-	render();
+	renderBoard();
 }
 var goWin = function(){
 	document.getElementsByClassName('main')[0].style.display = 'none';
@@ -28,4 +28,6 @@ var goLoad = function(){
 	document.getElementsByClassName('main')[0].style.display = 'none';
 	document.getElementsByClassName('footer')[0].style.display = 'none';
 	document.getElementById('loadWindows').style.display= 'flex';
+	renderLoad();
 }
+

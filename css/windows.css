@@ -46,6 +46,7 @@ input,textarea{
     width: 45%;
     height: 40%;
 }
+
 @media(max-width: 1550px){
     .window{
         width: 30%;
