@@ -15,15 +15,15 @@ var turn = 'blue',
     timeMP2HTML = null,
     timeSP2HTML = null;
 //  Stop all Chronometers
-var stopChronometer = function(){
+var stopChronometer = function() {
     clearInterval(ChronometerP1);
     clearInterval(ChronometerP2);
 }
 //  Star the Chronometer, depending on the turn
-var startChronometer = function(){
+var startChronometer = function() {
     if(turn === 'blue'){
         ChronometerP1 = setInterval(
-        function(){
+        function() {
             if (acumSP1 == 60){
                 acumSP1 = 0;
                 acumMP1++;
@@ -32,9 +32,9 @@ var startChronometer = function(){
             timeSP1HTML.innerHTML = acumSP1;
             acumSP1++;
         },1000);
-    }else if (turn === 'green'){
+    }else if (turn === 'green') {
         ChronometerP2 = setInterval(
-        function(){
+        function() {
             if (acumSP2 == 60){
                 acumSP2 = 0;
                 acumMP2++;
@@ -45,7 +45,7 @@ var startChronometer = function(){
         },1000);
     }
 }
-var toggleTurn = function(){
+var toggleTurn = function() {
     stopChronometer();
     if(turn === 'blue'){
         turn='green';
@@ -58,16 +58,18 @@ var toggleTurn = function(){
     }
     startChronometer();
 }
-var loadNewGame = function(){
-    turn = 'blue',
-    acumSP1 = 0,
-    acumMP1 = 0,
-    acumSP2 = 0,
-    acumMP2 = 0,
+var loadNewGame = function() {
+    turn = 'blue';
+    acumSP1 = 0;
+    acumMP1 = 0;
+    acumSP2 = 0;
+    acumMP2 = 0;
     timeSP2HTML.innerHTML = acumSP2;
     timeMP2HTML.innerHTML = acumMP2;
     timeSP1HTML.innerHTML = acumSP1;
     timeMP1HTML.innerHTML = acumMP1;
+    timeP2HTML.style.background = '#52EE5A';
+    timeP1HTML.style.background = 'black';
     boardArray = [
         [null, null, null, null, null, null],
         [null, null, null, null, null, null],
@@ -80,7 +82,7 @@ var loadNewGame = function(){
     goGame();
 }
 
-var buttonLoadHandler = function (){
+var buttonLoadHandler = function() {
     buttonLoadHTML = document.getElementsByClassName('buttonLoad');
     for (var i = 0; i < buttonLoadHTML.length; i++){
         buttonLoadHTML[i].onclick = loadGame;
@@ -88,7 +90,7 @@ var buttonLoadHandler = function (){
 }
 //  load the saved games
 //  generates HTML content in the window
-var renderLoad = function(){ 
+var renderLoad = function() { 
     var html = '';
     for (var i = 0; i < LSSavedGames.length; i++){
         html += '<div id="load' + i + '" class="buttonWindow buttonLoad">' + i + '</div>';
