@@ -2,7 +2,7 @@
     and the variable turn is initialized randomly, starts the onclick events 
     and run the goHome function. 
     all variables with HTML in their name, refers to the dom element */
-var init = function() {
+var init = ()=> {
     LSSavedGames = JSON.parse(localStorage['SaveGame'] || '[]');
     turn = Math.random() > 0.5 ? 'blue' : 'green';
     boardHTML = document.getElementById('board');

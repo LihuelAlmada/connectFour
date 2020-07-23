@@ -13,7 +13,7 @@ var boardHTML = null,
     [null, null, null, null, null, null],
     ];
 //  search for 4 online or draws
-var checkGameStatus = function() {
+var checkGameStatus = ()=> {
     var k = 0,
         l = boardArray.length;
     for (var i = 0; i < l; i++) {
@@ -69,7 +69,7 @@ var checkGameStatus = function() {
 }
 /*  trim the string id, showing only the second element, which is the column, 
     then look for the first empty box in that column and run the corresponding events*/
-var columnEventHandler = function (e) {
+var columnEventHandler = (e)=> {
     var columnId = e.target.id.substr(1, 1);
     for (var i = 0; i < boardArray[columnId].length; i++) {
         if (!boardArray[columnId][i]) {
@@ -82,14 +82,14 @@ var columnEventHandler = function (e) {
     }
 }
 //  add event onclick to all columns creates
-var bindColumnHandlers = function () {
+var bindColumnHandlers = ()=> {
     columnsHTML = document.getElementsByClassName('column');
     for (var i = 0; i < columnsHTML.length; i++) {
         columnsHTML[i].onclick = columnEventHandler;
     }
 }
 //  generates HTML content in the board
-var renderBoard = function() { 
+var renderBoard = ()=> { 
     var html = '';
     for (var i = 0; i < boardArray.length; i++) {
         html += '<div id="c' + i + '" class="column">';

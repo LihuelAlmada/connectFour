@@ -1,9 +1,9 @@
 var LSSavedGames = [];
-var saveGame = function() {
+var saveGame = ()=> {
     LSSavedGames.push({turn,acumSP1,acumMP1,acumSP2,acumMP2,boardArray})
     localStorage.setItem("SaveGame", JSON.stringify(LSSavedGames));
 }
-var loadGame = function(e) {
+var loadGame = (e)=> {
     var loadId = e.target.id.substr(4, 1);
     loadLocalStorage = JSON.parse(localStorage["SaveGame"]);
     boardArray = loadLocalStorage[loadId].boardArray;

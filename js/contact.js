@@ -3,10 +3,10 @@ var contactEmail = null;
 var contactMessage = null;
 var contactError = '';
 //  open the operating system's default emailing tool
-var sendEmail = function(contactName, contactMessage) {
+var sendEmail = (contactName, contactMessage)=> {
     window.open('mailto:lihuel.almada@gmail.com?subject=' + encodeURIComponent(contactName) +'&body=' + encodeURIComponent(contactMessage));
 }
-var validateForm = function() {
+var validateForm = ()=> {
     var alphaNum = /^[a-zA-Z0-9]*$/; //alphanumeric characters only
     var validEmail = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/; //regex with multiple email formats
     var isValid = true;
