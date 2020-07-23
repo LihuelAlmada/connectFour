@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/windows.css">
         <script type="text/javascript" src="js/localStorage.js"></script>
+        <script type="text/javascript" src="js/contact.js"></script>
         <script type="text/javascript" src="js/game.js"></script>
         <script type="text/javascript" src="js/board.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
@@ -81,15 +82,16 @@
             <!--this window appears when the contact button is pressed in the initialWindow-->
             <div id="contactWindow" class="window">
                 <h2>CONTACT</h2>
-                <label for="name">Name</label>
-                <input id="name" class="entry" type="text" name="name">
-                <label for="email">Email</label>
-                <input id="email" class="entry" type="text" name="email">
-                <label for="message">Message</label>
-                <textarea id="message" class="entry" name="message"></textarea>
+                <label for="contactName">Name</label>
+                <input id="contactName" class="entry" type="text" name="name">
+                <label for="contactEmail">Email</label>
+                <input id="contactEmail" class="entry" type="text" name="email">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" class="entry" name="message"></textarea>
+                <div id="contactError"></div>
                 <div class="footerWindow">
-                <button id="backContact" class="buttonWindow buttonContact">Back</button>
-                <button id="sendContact" class="buttonWindow buttonContact">Send</button>
+                    <button id="backContact" class="buttonWindow buttonContact">Back</button>
+                    <button id="sendContact" class="buttonWindow buttonContact">Send</button>
                 </div>
             </div>
         </div>

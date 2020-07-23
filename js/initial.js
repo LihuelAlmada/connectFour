@@ -24,6 +24,12 @@ var init = function() {
     savedGamesHTML = document.getElementById('savedGames');
     load = document.getElementById('load');
     save = document.getElementById('save');
+    sendContact = document.getElementById('sendContact');
+    contactName = document.getElementById('contactName');
+    console.log(contactName);
+    contactEmail = document.getElementById('contactEmail');
+    contactMessage = document.getElementById('contactMessage');
+    contactError = document.getElementById('contactError');
     newGame.onclick = loadNewGame; 
     Players2.onclick = loadNewGame;
     contact.onclick = goContact;
@@ -32,7 +38,7 @@ var init = function() {
     backLoad.onclick = goGame;
     save.onclick = saveGame;
     load.onclick = goLoad;
-
+    sendContact.onclick = validateForm;
     goHome();
 }
 window.onload = init;
