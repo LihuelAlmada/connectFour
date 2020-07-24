@@ -19,13 +19,21 @@
             the windows or menus and the game itself-->
         <div class="wrapper">
             <!--initialWindow is the first window that is shown in the game, 
-                where there are buttons to select if you play as 2 or 3 players,
+                where there are buttons to select if you play as two or three players,
                 and one that sends you to the contact window-->
             <div id="initialWindow" class="window">
                 <h2>CONNECT FOUR</h2>
                 <button id="Players2" class="buttonWindow">2 Players</button>
                 <button id="Players3" class="buttonWindow">3 Players</button>
                 <button id="contact" class="buttonWindow">Contact</button>
+            </div>
+            <!--if select two or three players, open this window-->
+            <div id="playersNamesWindow" class="window">
+                <div id="playersNames"></div>
+                <div class="footerWindow">
+                    <button id="backPlayersNames" class="buttonWindow buttonForm">Back</button>
+                    <button id="nextPlayersNames" class="buttonWindow buttonForm">Next</button>
+                </div>
             </div>
             <!--main is the container of the game itself,
                 here is turn and board-->
@@ -69,8 +77,8 @@
                 <h2> Saved Games</h2>
                 <div id="savedGames" class="savedGames"></div>
                 <div class="footerWindow">
-                    <button id="backLoad" class="buttonWindow buttonContact">Back</button>
-                    <button id="nextLoad" class="buttonWindow buttonContact">Next</button>
+                    <button id="backLoad" class="buttonWindow buttonForm">Back</button>
+                    
                 </div>
             </div>
             <!--this window appears when there is a winner-->
@@ -90,8 +98,8 @@
                 <textarea id="contactMessage" class="entry" name="message"></textarea>
                 <div id="contactError"></div>
                 <div class="footerWindow">
-                    <button id="backContact" class="buttonWindow buttonContact">Back</button>
-                    <button id="sendContact" class="buttonWindow buttonContact">Send</button>
+                    <button id="backContact" class="buttonWindow buttonForm">Back</button>
+                    <button id="sendContact" class="buttonWindow buttonForm">Send</button>
                 </div>
             </div>
         </div>

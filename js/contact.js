@@ -32,7 +32,6 @@ var validateForm = ()=> {
     }
     if(isValid){
         sendEmail(contactName, contactMessage)
-        console.log(contactName);
         contactMessage.value = '';
         contactEmail.value = '';
         contactName.value = '';
