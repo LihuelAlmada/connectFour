@@ -20,9 +20,9 @@ var turn = 'blue',
     timeSP2HTML = null,
     timeMP3HTML = null,
     timeSP3HTML = null,
-    playerName1 = null,
-    playerName2 = null,
-    playerName3 = null,
+    playerName1Value = null,
+    playerName2Value = null,
+    playerName3Value = null,
     PlayerName1TurnHTML = null,
     PlayerName2TurnHTML = null,
     PlayerName3TurnHTML = null,
@@ -36,43 +36,43 @@ var validateNames = ()=> {
     var isValid = true;
     var playersNamesMessageError = [];
     playerNameError = document.getElementById('playerNameError');
-    if(playerName1.value.length < 3) {
+    if(playerName1Value.length < 3) {
         playersNamesMessageError.push ('Name 1 is short');
         isValid = false;
     }
-    if(playerName1.value.length > 16) {
+    if(playerName1Value.length > 16) {
         playersNamesMessageError.push ('Name 1 is long');
         isValid = false;
     }
-    if(!alphaNum.test(playerName1.value)) {
-        playerName1.value = '';
+    if(!alphaNum.test(playerName1Value)) {
+        playerName1Value = '';
         playersNamesMessageError.push ('Invalid characters in name 1');
         isValid = false;
     }   
-    if(playerName2.value.length < 3) {
+    if(playerName2Value.length < 3) {
         playersNamesMessageError.push ('Name 2 is short');
         isValid = false;
     }
-    if(playerName2.value.length > 16) {
+    if(playerName2Value.length > 16) {
         playersNamesMessageError.push ('Name 2 is long');
         isValid = false;
     }
-    if(!alphaNum.test(playerName2.value)) {
-        playerName2.value = '';
+    if(!alphaNum.test(playerName2Value)) {
+        playerName2Value = '';
         playersNamesMessageError.push ('Invalid characters in name 2');
         isValid = false;
     }   
     if(players == 3) {
-        if(playerName3.value.length < 3) {
+        if(playerName3Value.length < 3) {
             playersNamesMessageError.push ('Name 3 is short');
             isValid = false;
         }
-        if(playerName3.value.length > 16) {
+        if(playerName3Value.length > 16) {
             playersNamesMessageError.push ('Name 3 is long');
             isValid = false;
         }
-        if(!alphaNum.test(playerName3.value)) {
-            playerName3.value = '';
+        if(!alphaNum.test(playerName3Value)) {
+            playerName3Value = '';
             playersNamesMessageError.push ('Invalid characters in name');
             isValid = false;
         }   
@@ -96,7 +96,11 @@ var renderLoad = ()=> {
     var html = '';
     for (var i = 0; i < LSSavedGames.length; i++) {
         
-        html += '<div id="load' + i + '" class="buttonWindow buttonLoad">' + i + '</div>';
+        html += '<div id="load' + i + '" class="buttonWindow buttonLoad">' + i + ' '+ LSSavedGames[i].playerName1Value + ' VS '+ LSSavedGames[i].playerName2Value;
+        if(LSSavedGames[i].players == 3 ) {
+            html += ' VS ' + LSSavedGames[i].playerName3Value;
+        }
+        html += '</div>';
     }
     savedGamesHTML.innerHTML = html;
     buttonLoadHandler();
@@ -120,7 +124,7 @@ var renderTurn = ()=> {
         html +=         '<div>:</div>';
         html +=         '<div id="timeSP'+ i +'">0</div>';
         html +=     '</div>';
-        html +=     '<div class="labelTime">Player' + i + '</div>';
+        html +=     '<div class="labelTime">Player ' + i + '</div>';
         html += '</div>';
     }
     turnHTML.innerHTML = html;
@@ -181,32 +185,38 @@ var toggleTurn = ()=> {
             timeP2HTML.style.background = 'black';
         }
     }else {
+        timeP1HTML.style.background = 'black';
+        timeP2HTML.style.background = 'black';
+        timeP3HTML.style.background = 'black';
         if(turn === 'blue') {
             turn='green';
             timeP2HTML.style.background = '#52EE5A';
-            timeP1HTML.style.background = 'black';
         }else if(turn === 'green') {
             turn='red';
-            timeP2HTML.style.background = 'black';
             timeP3HTML.style.background = '#d44931';
         }else {
             turn='blue';
-            timeP3HTML.style.background = 'black';
-            timeP2HTML.style.background = 'black';
             timeP1HTML.style.background = '#4684F8';
         }
     }
     startChronometer();
 }
 var loadNewGame = ()=> {
+    var playerName1 = null,
+        playerName2 = null,
+        playerName3 = null;
     turn = 'blue';
     acumSP1 = 0;
     acumMP1 = 0;
     acumSP2 = 0;
     acumMP2 = 0;
+    acumSP3 = 0;
+    acumMP3 = 0;
+    //playerName is name in the input
     playerName1 = document.getElementById('playerName1');
     playerName2 = document.getElementById('playerName2');
-    playerName3 = document.getElementById('playerName3');
+    playerName1Value = playerName1.value;
+    playerName2Value = playerName2.value;
     timeP1HTML = document.getElementById('timeP1');
     timeP2HTML = document.getElementById('timeP2');
     timeMP1HTML = document.getElementById('timeMP1');
@@ -217,10 +227,11 @@ var loadNewGame = ()=> {
     timeMP2HTML.innerHTML = acumMP2;
     timeSP1HTML.innerHTML = acumSP1;
     timeMP1HTML.innerHTML = acumMP1;
+    //playerNameTurn is name in the game
     PlayerName1TurnHTML = document.getElementById('PlayerName1Turn');
     PlayerName2TurnHTML = document.getElementById('PlayerName2Turn');
-    PlayerName1TurnHTML.innerHTML = playerName1.value
-    PlayerName2TurnHTML.innerHTML = playerName2.value
+    PlayerName1TurnHTML.innerHTML = playerName1Value;
+    PlayerName2TurnHTML.innerHTML = playerName2Value;
     boardArray = [
         [null, null, null, null, null, null],
         [null, null, null, null, null, null],
@@ -235,10 +246,12 @@ var loadNewGame = ()=> {
         timeMP3HTML = document.getElementById('timeMP3');
         timeSP3HTML = document.getElementById('timeSP3');
         PlayerName3TurnHTML = document.getElementById('PlayerName3Turn');
+        playerName3 = document.getElementById('playerName3');
+        playerName3Value = playerName3.value;
         timeSP3HTML.innerHTML = acumSP3;
         timeMP3HTML.innerHTML = acumMP3;
         timeP3HTML.style.background = 'black';
-        PlayerName3TurnHTML.innerHTML = playerName3.value;
+        PlayerName3TurnHTML.innerHTML = playerName3Value;
         boardArray = [
             [null, null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null, null],

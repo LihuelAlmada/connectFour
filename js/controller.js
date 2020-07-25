@@ -20,6 +20,8 @@ var goGame = ()=> {
 	document.getElementById('playersNamesWindow').style.display= 'none';
 	document.getElementsByClassName('main')[0].style.display = 'flex';
 	document.getElementsByClassName('footer')[0].style.display = 'flex';
+	renderBoard();
+	stopChronometer();
 }
 var goWin = ()=> {
 	document.getElementsByClassName('main')[0].style.display = 'none';
@@ -38,7 +40,6 @@ var go2PlayersNames = ()=> {
 	players = 2;
 	renderPlayersNames();
 	renderTurn();
-	renderBoard();
 }
 var go3PlayersNames = ()=> {
 	document.getElementById('initialWindow').style.display= 'none';
@@ -46,6 +47,5 @@ var go3PlayersNames = ()=> {
 	players = 3;
 	renderPlayersNames();
 	renderTurn();
-	renderBoard();
 }
 
