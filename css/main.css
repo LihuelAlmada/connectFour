@@ -81,6 +81,10 @@
     background: url(../img/fire.svg) no-repeat center;
     background-color: #d44931 ;
 }
+.main .board .column .spot.player3{
+    width: 75%;
+    height: 10%;
+}
 .footer{
     display: flex;
     justify-content: space-between;

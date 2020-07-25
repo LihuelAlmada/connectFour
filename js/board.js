@@ -3,6 +3,7 @@ var boardHTML = null,
     columnsHTML = null,
     winHTML = null,
     winDescHTML = null,
+    spotHTML = null,
     boardArray = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -95,6 +96,9 @@ var renderBoard = ()=> {
         html += '<div id="c' + i + '" class="column">';
         for (var j = boardArray[i].length - 1; j >= 0; j--) {
             html += '<div id="s' + i + j + '" class="spot';
+            if(players == 3){
+                html += ' player3';
+            }
             if (boardArray[i][j]) html += ' ' + boardArray[i][j]
             {
                 html += '"></div>';

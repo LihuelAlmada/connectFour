@@ -222,18 +222,6 @@ var loadNewGame = ()=> {
     PlayerName2TurnHTML = document.getElementById('PlayerName2Turn');
     PlayerName1TurnHTML.innerHTML = playerName1.value
     PlayerName2TurnHTML.innerHTML = playerName2.value
-    if(players == 3){
-        timeP3HTML = document.getElementById('timeP3');
-        timeMP3HTML = document.getElementById('timeMP3');
-        timeSP3HTML = document.getElementById('timeSP3');
-        PlayerName3TurnHTML = document.getElementById('PlayerName3Turn');
-        timeSP3HTML.innerHTML = acumSP3;
-        timeMP3HTML.innerHTML = acumMP3;
-        timeP3HTML.style.background = 'black';
-        PlayerName3TurnHTML.innerHTML = playerName3.value
-    }
-    timeP1HTML.style.background = '#4684F8';
-    timeP2HTML.style.background = 'black';
     boardArray = [
         [null, null, null, null, null, null],
         [null, null, null, null, null, null],
@@ -243,6 +231,34 @@ var loadNewGame = ()=> {
         [null, null, null, null, null, null],
         [null, null, null, null, null, null],
         ];
+    if(players == 3){
+        timeP3HTML = document.getElementById('timeP3');
+        timeMP3HTML = document.getElementById('timeMP3');
+        timeSP3HTML = document.getElementById('timeSP3');
+        PlayerName3TurnHTML = document.getElementById('PlayerName3Turn');
+        timeSP3HTML.innerHTML = acumSP3;
+        timeMP3HTML.innerHTML = acumMP3;
+        timeP3HTML.style.background = 'black';
+        PlayerName3TurnHTML.innerHTML = playerName3.value
+        boardArray = [
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null],
+            ];
+        spotHTML = document.getElementsByClassName('spot');
+        spotHTML.className += ' player3';
+    }
+
+    timeP1HTML.style.background = '#4684F8';
+    timeP2HTML.style.background = 'black';
+    
     validateNames();
 	renderBoard();
 }
