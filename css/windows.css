@@ -56,7 +56,15 @@ input,textarea{
     height: 100%;
     overflow: auto;
 }
-
+.buttonLoad{
+    width: 98%;
+    margin: 2%;
+    border-radius: 0;
+}
+.buttonLoad:hover{
+    width: 98%;
+    margin: 2%;
+}
 @media(max-width: 1550px){
     .window{
         width: 30%;

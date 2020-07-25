@@ -95,10 +95,11 @@ var buttonLoadHandler = ()=> {
 var renderLoad = ()=> { 
     var html = '';
     for (var i = 0; i < LSSavedGames.length; i++) {
-        
-        html += '<div id="load' + i + '" class="buttonWindow buttonLoad">' + i + ' '+ LSSavedGames[i].playerName1Value + ' VS '+ LSSavedGames[i].playerName2Value;
+        html += '<div id="load' + i + '" class="buttonWindow buttonLoad">'
+        html +=     '<div>  ' + i + ' '+ LSSavedGames[i].playerName1Value + '</div>';
+        html +=     '<div>VS '+ LSSavedGames[i].playerName2Value + '</div>';
         if(LSSavedGames[i].players == 3 ) {
-            html += ' VS ' + LSSavedGames[i].playerName3Value;
+            html += '<div>VS ' + LSSavedGames[i].playerName3Value + '</div>';
         }
         html += '</div>';
     }
