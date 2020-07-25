@@ -1,3 +1,5 @@
+CONNECT FOUR!
+
 Solution here --> https://lihuelalmada.github.io/connectFour/
 
 Develop a web version of the game "Connect Four" (https://en.wikipedia.org/wiki/Connect_Four)
