@@ -5,6 +5,7 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
     background: url(../img/wrapperBackground.svg);
     background-size: cover;
 }
@@ -19,7 +20,7 @@
 .main .turn{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 10%;
     width: 52%;
@@ -28,7 +29,7 @@
 .main .turn .time{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 50%;
@@ -36,9 +37,12 @@
     color: white;
     font-family: 'Mukta', sans-serif;
 }
-.main .turn .time .chronometer{
+
+.main .turn .time .labelTime{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 33%;
 }
 .main .board {
     display: flex;
@@ -66,12 +70,16 @@
     background-color: #FFFFFF85;
 }
 .main .board .column .spot.green {
-    background: url(../img/hoja.svg) no-repeat center center;
+    background: url(../img/leaf.svg) no-repeat center;
     background-color: #52EE5A;
 }
 .main .board .column .spot.blue {
-    background: url(../img/agua.svg) no-repeat center center;
+    background: url(../img/water.svg) no-repeat center;
     background-color: #4684F8;
+}
+.main .board .column .spot.red {
+    background: url(../img/fire.svg) no-repeat center;
+    background-color: #d44931 ;
 }
 .footer{
     display: flex;

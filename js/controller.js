@@ -7,6 +7,7 @@ var goHome = ()=> {
 	document.getElementById('loadWindows').style.display= 'none';
 	document.getElementById('playersNamesWindow').style.display= 'none';
 	document.getElementById('initialWindow').style.display= 'flex';
+	stopChronometer();
 }
 var goContact = ()=> {
 	document.getElementById('initialWindow').style.display= 'none';
@@ -19,7 +20,6 @@ var goGame = ()=> {
 	document.getElementById('playersNamesWindow').style.display= 'none';
 	document.getElementsByClassName('main')[0].style.display = 'flex';
 	document.getElementsByClassName('footer')[0].style.display = 'flex';
-	renderBoard();
 }
 var goWin = ()=> {
 	document.getElementsByClassName('main')[0].style.display = 'none';
@@ -38,11 +38,15 @@ var go2PlayersNames = ()=> {
 	document.getElementById('playersNamesWindow').style.display= 'flex';
 	players = 2;
 	renderPlayersNames();
+	renderTurn();
+	renderBoard();
 }
 var go3PlayersNames = ()=> {
 	document.getElementById('initialWindow').style.display= 'none';
 	document.getElementById('playersNamesWindow').style.display= 'flex';
 	players = 3;
 	renderPlayersNames();
+	renderTurn();
+	renderBoard();
 }
 

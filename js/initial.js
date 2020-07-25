@@ -9,12 +9,6 @@ var init = ()=> {
     winHTML = document.getElementById('winText');
     winDescHTML = document.getElementById('winDescription');
     newGame = document.getElementById('newGame');
-    timeP1HTML = document.getElementById('timeP1');
-    timeP2HTML = document.getElementById('timeP2');
-    timeMP1HTML = document.getElementById('timeMP1');
-    timeSP1HTML = document.getElementById('timeSP1');
-    timeMP2HTML = document.getElementById('timeMP2');
-    timeSP2HTML = document.getElementById('timeSP2');
     Players2 = document.getElementById('Players2');
     Players3 = document.getElementById('Players3');
     contact = document.getElementById('contact');
@@ -32,6 +26,7 @@ var init = ()=> {
     playersNamesHTML = document.getElementById('playersNames');
     backPlayersNames = document.getElementById('backPlayersNames');
     nextPlayersNames = document.getElementById('nextPlayersNames');
+    turnHTML = document.getElementById('turn');
     backPlayersNames.onclick = goHome;
     nextPlayersNames.onclick = loadNewGame;
     newGame.onclick = loadNewGame; 
