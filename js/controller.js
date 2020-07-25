@@ -26,7 +26,6 @@ var goWin = ()=> {
 	document.getElementsByClassName('footer')[0].style.display = 'none';
 	document.getElementById('winWindows').style.display= 'flex';
 }
-
 var goLoad = ()=> {
 	document.getElementsByClassName('main')[0].style.display = 'none';
 	document.getElementsByClassName('footer')[0].style.display = 'none';

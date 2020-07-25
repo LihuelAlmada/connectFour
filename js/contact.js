@@ -11,7 +11,7 @@ var validateForm = ()=> {
     var validEmail = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/; //regex with multiple email formats
     var isValid = true;
     var contactMessageError = [];
-    if(contactName.value.length < 3){
+    if(contactName.value.length < 3) {
         contactMessageError.push ('Name short');
         isValid = false;
     }
@@ -30,13 +30,13 @@ var validateForm = ()=> {
         contactMessageError.push ('Please enter more than 5 characters');
         isValid = false;
     }
-    if(isValid){
+    if(isValid) {
         sendEmail(contactName, contactMessage)
         contactMessage.value = '';
         contactEmail.value = '';
         contactName.value = '';
         contactError.innerHTML = '';
-    } else{
+    } else {
         contactError.innerHTML = '<p class = "error">' + contactMessageError.join('</p> <p class = "error"> ') + '</p>';
     } 
 }

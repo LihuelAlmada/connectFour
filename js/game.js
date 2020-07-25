@@ -84,10 +84,9 @@ var validateNames = ()=> {
         playerNameError.innerHTML = '<p class = "error">' + playersNamesMessageError.join('</p> <p class = "error"> ') + '</p>';
     } 
 }
-
 var buttonLoadHandler = ()=> {
     buttonLoadHTML = document.getElementsByClassName('buttonLoad');
-    for (var i = 0; i < buttonLoadHTML.length; i++){
+    for (var i = 0; i < buttonLoadHTML.length; i++) {
         buttonLoadHTML[i].onclick = loadGame;
     }
 }
@@ -95,7 +94,7 @@ var buttonLoadHandler = ()=> {
 //  generates HTML content in the window
 var renderLoad = ()=> { 
     var html = '';
-    for (var i = 0; i < LSSavedGames.length; i++){
+    for (var i = 0; i < LSSavedGames.length; i++) {
         
         html += '<div id="load' + i + '" class="buttonWindow buttonLoad">' + i + '</div>';
     }
@@ -104,7 +103,7 @@ var renderLoad = ()=> {
 }
 var renderPlayersNames = ()=> {
     var html = '';
-    for (var i = 1; i <= players; i++){
+    for (var i = 1; i <= players; i++) {
         html += '<label for="playerName' + i + '">Name player ' + i + '</label>';
         html += '<input id="playerName' + i + '" class="entry" type="text" name="name">';
     }
@@ -113,7 +112,7 @@ var renderPlayersNames = ()=> {
 }
 var renderTurn = ()=> {
     var html = '';
-    for (var i = 1; i <= players; i++){
+    for (var i = 1; i <= players; i++) {
         html += '<div id="timeP'+ i +'" class="time">';
         html +=     '<div id="PlayerName' + i + 'Turn" class="labelTime"></div>';
         html +=     '<div class="labelTime">';
@@ -137,7 +136,7 @@ var startChronometer = ()=> {
     if(turn === 'blue'){
         ChronometerP1 = setInterval(
         ()=> {
-            if (acumSP1 == 60){
+            if (acumSP1 == 60) {
                 acumSP1 = 0;
                 acumMP1++;
                 timeMP1HTML.innerHTML = acumMP1;
@@ -148,7 +147,7 @@ var startChronometer = ()=> {
     }else if (turn === 'green') {
         ChronometerP2 = setInterval(
         ()=> {
-            if (acumSP2 == 60){
+            if (acumSP2 == 60) {
                 acumSP2 = 0;
                 acumMP2++;
                 timeMP2HTML.innerHTML = acumMP2;
@@ -159,7 +158,7 @@ var startChronometer = ()=> {
     }else {
         ChronometerP3 = setInterval(
             ()=> {
-                if (acumSP3 == 60){
+                if (acumSP3 == 60) {
                     acumSP3 = 0;
                     acumMP3++;
                     timeMP3HTML.innerHTML = acumMP3;
@@ -171,26 +170,26 @@ var startChronometer = ()=> {
 }
 var toggleTurn = ()=> {
     stopChronometer();
-    if(players == 2){
+    if(players == 2) {
         if(turn === 'blue') {
             turn='green';
             timeP2HTML.style.background = '#52EE5A';
             timeP1HTML.style.background = 'black';
-        }else{
+        }else {
             turn='blue';
             timeP1HTML.style.background = '#4684F8';
             timeP2HTML.style.background = 'black';
         }
-    } else{
+    }else {
         if(turn === 'blue') {
             turn='green';
             timeP2HTML.style.background = '#52EE5A';
             timeP1HTML.style.background = 'black';
-        }else if(turn === 'green'){
+        }else if(turn === 'green') {
             turn='red';
             timeP2HTML.style.background = 'black';
             timeP3HTML.style.background = '#d44931';
-        } else{
+        }else {
             turn='blue';
             timeP3HTML.style.background = 'black';
             timeP2HTML.style.background = 'black';
@@ -231,7 +230,7 @@ var loadNewGame = ()=> {
         [null, null, null, null, null, null],
         [null, null, null, null, null, null],
         ];
-    if(players == 3){
+    if(players == 3) {
         timeP3HTML = document.getElementById('timeP3');
         timeMP3HTML = document.getElementById('timeMP3');
         timeSP3HTML = document.getElementById('timeSP3');
@@ -239,7 +238,7 @@ var loadNewGame = ()=> {
         timeSP3HTML.innerHTML = acumSP3;
         timeMP3HTML.innerHTML = acumMP3;
         timeP3HTML.style.background = 'black';
-        PlayerName3TurnHTML.innerHTML = playerName3.value
+        PlayerName3TurnHTML.innerHTML = playerName3.value;
         boardArray = [
             [null, null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null, null],
@@ -252,13 +251,9 @@ var loadNewGame = ()=> {
             [null, null, null, null, null, null, null, null, null],
             [null, null, null, null, null, null, null, null, null],
             ];
-        spotHTML = document.getElementsByClassName('spot');
-        spotHTML.className += ' player3';
     }
-
     timeP1HTML.style.background = '#4684F8';
     timeP2HTML.style.background = 'black';
-    
     validateNames();
 	renderBoard();
 }
