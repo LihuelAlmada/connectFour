@@ -57,13 +57,19 @@ input,textarea{
     overflow: auto;
 }
 .buttonLoad{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     width: 98%;
+    height: 17%;
+    padding: 0%;
     margin: 2%;
     border-radius: 0;
 }
 .buttonLoad:hover{
-    width: 98%;
-    margin: 2%;
+    width: 100%;
 }
 @media(max-width: 1550px){
     .window{
@@ -77,7 +83,7 @@ input,textarea{
         height: 70%;
     }
 }
-@media(max-width: 650px){
+@media(max-width: 750px){
     .window{
         width: 60%;
         height: 70%;
