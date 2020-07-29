@@ -3,6 +3,7 @@ var boardHTML = null,
     columnsHTML = null,
     winHTML = null,
     winDescHTML = null,
+    //putTile = new Audio(),
     boardArray = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -77,6 +78,7 @@ var columnEventHandler = (e)=> {
             checkGameStatus();
             toggleTurn();
             renderBoard();
+            //putTile.play();
             break;
         }
     }
