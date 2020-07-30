@@ -20,6 +20,7 @@ var goGame = ()=> {
 	document.getElementById('playersNamesWindow').style.display= 'none';
 	document.getElementsByClassName('main')[0].style.display = 'flex';
 	document.getElementsByClassName('footer')[0].style.display = 'flex';
+	noMoreTiles = false;
 	renderBoard();
 	stopChronometer();
 }
@@ -32,6 +33,7 @@ var goLoad = ()=> {
 	document.getElementsByClassName('main')[0].style.display = 'none';
 	document.getElementsByClassName('footer')[0].style.display = 'none';
 	document.getElementById('loadWindows').style.display= 'flex';
+	noMoreTiles = false;
 	renderLoad();
 }
 var go2PlayersNames = ()=> {
