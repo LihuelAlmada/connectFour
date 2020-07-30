@@ -32,8 +32,13 @@ var checkGameStatus = ()=> {
     for (var i = 0; i < l; i++) {
         for (var j = 0; j < boardArray[i].length-3; j++) {
             if (boardArray[i][j]) {
-                if (boardArray[i][j] === (boardArray[i][j + 1]) && boardArray[i][j] === (boardArray[i][j + 2]) && boardArray[i][j] === (boardArray[i][j + 3])) {
+                if (boardArray[i][j] === (boardArray[i][j + 1]) && boardArray[i][j] === (boardArray[i][j + 2]) && boardArray[i][j] === (boardArray[i][j + 3])) {                   
                     noMoreTiles = true;
+                    renderBoard();
+                    boardArray[i][j] = 'winTile';
+                    boardArray[i][j + 1] = 'winTile';
+                    boardArray[i][j + 2] = 'winTile';
+                    boardArray[i][j + 3] = 'winTile';
                     winGame();
                 }
             }
@@ -44,10 +49,20 @@ var checkGameStatus = ()=> {
             if (boardArray[i][j]) {
                 if (boardArray[i][j] === (boardArray[i + 1][j]) && boardArray[i][j] === (boardArray[i + 2][j]) && boardArray[i][j] === (boardArray[i + 3][j])) {
                     noMoreTiles = true;
+                    renderBoard();
+                    boardArray[i][j] = 'winTile';
+                    boardArray[i + 1][j] = 'winTile';
+                    boardArray[i + 2][j] = 'winTile';
+                    boardArray[i + 3][j] = 'winTile';                    
                     winGame();
                 }
                 if (boardArray[i][j] === (boardArray[i + 1][j + 1]) && boardArray[i][j] === (boardArray[i + 2][j + 2]) && boardArray[i][j] === (boardArray[i + 3][j + 3])) {
                     noMoreTiles = true;
+                    renderBoard();
+                    boardArray[i][j] = 'winTile';
+                    boardArray[i + 1][j + 1] = 'winTile';
+                    boardArray[i + 2][j + 2] = 'winTile';
+                    boardArray[i + 3][j + 3] = 'winTile';
                     winGame();
                 }
             }
@@ -58,6 +73,11 @@ var checkGameStatus = ()=> {
             if (boardArray[i][j]) {
                 if (boardArray[i][j] === (boardArray[i + 1][j - 1]) && boardArray[i][j] === (boardArray[i + 2][j - 2]) && boardArray[i][j] === (boardArray[i + 3][j - 3])) {
                     noMoreTiles = true;
+                    renderBoard();
+                    boardArray[i][j] = 'winTile';
+                    boardArray[i + 1][j - 1] = 'winTile';
+                    boardArray[i + 2][j - 2] = 'winTile';
+                    boardArray[i + 3][j - 3] = 'winTile';
                     winGame();
                 }
             }
