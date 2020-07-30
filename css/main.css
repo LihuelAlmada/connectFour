@@ -6,7 +6,7 @@
     height: 100vh;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
-    background: url(../assets/img/wrapperBackground.svg);
+    background: url(../assets/wrapperBackground.svg);
     background-size: cover;
 }
 .main {
@@ -49,7 +49,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: url(../assets/img/boardBackground.svg);
+    background: url(../assets/boardBackground.svg);
     border-radius: 5%;
     padding: 0 2%;
     width: 50%;
@@ -73,19 +73,19 @@
     background-color: #00000086;
 }
 .main .board .column .spot.green {
-    background: url(../assets/img/leaf.svg) no-repeat center;
+    background: url(../assets/leaf.svg) no-repeat center;
     background-color: #52EE5A;
 }
 .main .board .column .spot.blue {
-    background: url(../assets/img/water.svg) no-repeat center;
+    background: url(../assets/water.svg) no-repeat center;
     background-color: #4684F8;
 }
 .main .board .column .spot.red {
-    background: url(../assets/img/fire.svg) no-repeat center;
+    background: url(../assets/fire.svg) no-repeat center;
     background-color: #d44931 ;
 }
 .main .board .column .spot.winTile{
-    background: url(../assets/img/star.svg) no-repeat center center;
+    background: url(../assets/star.svg) no-repeat center center;
     background-color: #ffffff ;
 }
 .main .board .column .spot.player3{

@@ -27,9 +27,9 @@ var init = ()=> {
     backPlayersNames = document.getElementById('backPlayersNames');
     nextPlayersNames = document.getElementById('nextPlayersNames');
     turnHTML = document.getElementById('turn');
-    putTile.src = '../assets/sounds/putTile.mp3';
-    winSound.src = '../assets/sounds/win.mp3';
-    drawSound.src = '../assets/sounds/draw.mp3';
+    putTile.src = '../assets/putTile.mp3';
+    winSound.src = '../assets/win.mp3';
+    drawSound.src = '../assets/draw.mp3';
     backPlayersNames.onclick = goHome;
     nextPlayersNames.onclick = loadNewGame;
     newGame.onclick = loadNewGame; 
@@ -43,6 +43,5 @@ var init = ()=> {
     load.onclick = goLoad;
     sendContact.onclick = validateForm;
     goHome();
-    
 }
 window.onload = init;
