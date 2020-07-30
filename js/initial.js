@@ -27,9 +27,9 @@ var init = ()=> {
     backPlayersNames = document.getElementById('backPlayersNames');
     nextPlayersNames = document.getElementById('nextPlayersNames');
     turnHTML = document.getElementById('turn');
-    putTile.src = '../assets/putTile.wav';
-    winSound.src = '../assets/win.wav';
-    drawSound.src = '../assets/draw.wav';
+    putTile.src = 'https://raw.githubusercontent.com/LihuelAlmada/connectFour/master/assets/putTile.wav';
+    winSound.src = 'https://raw.githubusercontent.com/LihuelAlmada/connectFour/master/assets/win.wav';
+    drawSound.src = 'https://raw.githubusercontent.com/LihuelAlmada/connectFour/master/assets/draw.wav';
     backPlayersNames.onclick = goHome;
     nextPlayersNames.onclick = loadNewGame;
     newGame.onclick = loadNewGame; 
