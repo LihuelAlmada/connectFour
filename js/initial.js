@@ -27,9 +27,9 @@ var init = ()=> {
     backPlayersNames = document.getElementById('backPlayersNames');
     nextPlayersNames = document.getElementById('nextPlayersNames');
     turnHTML = document.getElementById('turn');
-    putTile.src = '../assets/putTile.mp3';
-    winSound.src = '../assets/win.mp3';
-    drawSound.src = '../assets/draw.mp3';
+    putTile.src = '../assets/putTile.wav';
+    winSound.src = '../assets/win.wav';
+    drawSound.src = '../assets/draw.wav';
     backPlayersNames.onclick = goHome;
     nextPlayersNames.onclick = loadNewGame;
     newGame.onclick = loadNewGame; 
