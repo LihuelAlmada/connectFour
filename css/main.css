@@ -113,6 +113,7 @@
     border-radius: 50%;
     background-color: black;
     color: white;
+    outline: none;
 }
 .buttonMain:hover{
     background-color: grey;
