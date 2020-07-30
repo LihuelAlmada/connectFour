@@ -22,7 +22,8 @@
     width: 45%;
     height: 17%;
     padding: 0%;
-    background-color: #3e84b3; 
+    background-color: #3e84b3;
+    cursor: pointer;
 }
 input,textarea{
     width: 100%;
