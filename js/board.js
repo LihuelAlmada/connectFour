@@ -19,12 +19,12 @@ var boardHTML = null,
 //  search for 4 online or draws
 var winGame = ()=> {
     stopChronometer();
+    winSound.play();
     setTimeout(function(){
     winHTML.innerHTML = (turn + ' won!');
     winDescHTML.innerHTML = ('Congratulations, placed four ' + turn + ' tiles online before your opponent!!!');
-    winSound.play();
     goWin();
-    }, 3000) 
+    }, 1400);
 }
 var checkGameStatus = ()=> {
     var k = 0,
