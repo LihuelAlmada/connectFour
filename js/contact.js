@@ -12,7 +12,7 @@ var validateForm = ()=> {
     var isValid = true;
     var contactMessageError = [];
     if(contactName.value.length < 3) {
-        contactMessageError.push ('Name short');
+        contactMessageError.push ('Name short, minimum three characters');
         isValid = false;
     }
     if(!alphaNum.test(contactName.value)) {
@@ -27,7 +27,7 @@ var validateForm = ()=> {
     }
     if(contactMessage.value.length < 5) {
         contactMessage.value = '';
-        contactMessageError.push ('Please enter more than 5 characters');
+        contactMessageError.push ('Message short, minimum five characters');
         isValid = false;
     }
     if(isValid) {
