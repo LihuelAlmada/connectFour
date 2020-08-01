@@ -55,3 +55,10 @@ var loadGame = (e)=> {
     }
     goGame();
 }
+var loadDelete = (e)=>{
+    var loadId = e.target.id.substr(4, 1);
+    LSSavedGames = JSON.parse(localStorage["SaveGame"]);
+    LSSavedGames.splice(loadId, 1);
+    localStorage.setItem("SaveGame", JSON.stringify(LSSavedGames));
+    renderLoad();
+}

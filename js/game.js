@@ -11,6 +11,7 @@ var turn = 'blue',
     ChronometerP3,
     savedGamesHTML = null,
     buttonLoadHTML = null,
+    buttonDeleteLoadHTML = null,
     timeP1HTML = null,
     timeP2HTML = null,
     timeP3HTML = null,
@@ -89,21 +90,30 @@ var buttonLoadHandler = ()=> {
     for (var i = 0; i < buttonLoadHTML.length; i++) {
         buttonLoadHTML[i].onclick = loadGame;
     }
+    buttonDeleteLoadHTML = document.getElementsByClassName('buttonDeleteLoad');
+    for (var i = 0; i < buttonDeleteLoadHTML.length; i++) {
+        buttonDeleteLoadHTML[i].onclick = loadDelete;
+    }
 }
 //  load the saved games
 //  generates HTML content in the window
 var renderLoad = ()=> { 
     var html = '';
     for (var i = 0; i < LSSavedGames.length; i++) {
-        html += '<div id="load' + i + '" class="buttonWindow buttonLoad">'
-        html +=     '<div>' + i +  '</div>';
-        html +=     '<div>' + LSSavedGames[i].playerName1Value + '</div>';
-        html +=     '<div>VS</div>';
-        html +=     '<div>'+ LSSavedGames[i].playerName2Value + '</div>';
+        html += '<div class="load">';
+        html +=     '<div id="load' + i + '" class="buttonWindow buttonLoad">';
+        html +=         '<div>' + i +  '</div>';
+        html +=         '<div>' + LSSavedGames[i].playerName1Value + '</div>';
+        html +=         '<div>VS</div>';
+        html +=         '<div>'+ LSSavedGames[i].playerName2Value + '</div>';
         if(LSSavedGames[i].players == 3 ) {
-            html += '<div>VS</div>';
-            html += '<div>'+ LSSavedGames[i].playerName3Value + '</div>';
+            html +=     '<div>VS</div>';
+            html +=     '<div>'+ LSSavedGames[i].playerName3Value + '</div>';
         }
+        html +=     '</div>';
+        html +=     '<div id="delL' + i + '" class="buttonWindow buttonDeleteLoad">';
+        html +=     '<div>-</div>'
+        html +=     '</div>';
         html += '</div>';
     }
     savedGamesHTML.innerHTML = html;
