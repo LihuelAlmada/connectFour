@@ -149,7 +149,7 @@ var startChronometer = ()=> {
                 acumMP1++;
                 timeMP1HTML.innerHTML = acumMP1;
             }
-            timeSP1HTML.innerHTML = acumSP1;
+            (acumSP1 < 10) ? timeSP1HTML.innerHTML = ('0') + acumSP1 : timeSP1HTML.innerHTML = acumSP1;
             acumSP1++;
         },1000);
     }else if (turn === 'green') {
@@ -160,7 +160,7 @@ var startChronometer = ()=> {
                 acumMP2++;
                 timeMP2HTML.innerHTML = acumMP2;
             }
-            timeSP2HTML.innerHTML = acumSP2;
+            (acumSP2 < 10) ? timeSP2HTML.innerHTML = ('0') + acumSP2 : timeSP2HTML.innerHTML = acumSP2;
             acumSP2++;
         },1000);
     }else {
@@ -171,7 +171,7 @@ var startChronometer = ()=> {
                     acumMP3++;
                     timeMP3HTML.innerHTML = acumMP3;
                 }
-                timeSP3HTML.innerHTML = acumSP3;
+                (acumSP3 < 10) ? timeSP3HTML.innerHTML = ('0') + acumSP3 : timeSP3HTML.innerHTML = acumSP3;
                 acumSP3++;
             },1000);
     }
@@ -227,9 +227,9 @@ var loadNewGame = ()=> {
     timeSP1HTML = document.getElementById('timeSP1');
     timeMP2HTML = document.getElementById('timeMP2');
     timeSP2HTML = document.getElementById('timeSP2');
-    timeSP2HTML.innerHTML = acumSP2;
+    timeSP2HTML.innerHTML = ('0')+acumSP2;
     timeMP2HTML.innerHTML = acumMP2;
-    timeSP1HTML.innerHTML = acumSP1;
+    timeSP1HTML.innerHTML = ('0')+acumSP1;
     timeMP1HTML.innerHTML = acumMP1;
     //playerNameTurn is name in the game
     PlayerName1TurnHTML = document.getElementById('PlayerName1Turn');
@@ -252,7 +252,7 @@ var loadNewGame = ()=> {
         PlayerName3TurnHTML = document.getElementById('PlayerName3Turn');
         playerName3 = document.getElementById('playerName3');
         playerName3Value = playerName3.value;
-        timeSP3HTML.innerHTML = acumSP3;
+        timeSP3HTML.innerHTML = ('0')+acumSP3;
         timeMP3HTML.innerHTML = acumMP3;
         timeP3HTML.style.background = 'black';
         PlayerName3TurnHTML.innerHTML = playerName3Value;
