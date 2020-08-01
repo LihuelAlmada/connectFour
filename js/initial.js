@@ -15,9 +15,10 @@ var init = ()=> {
     home = document.getElementById('home');
     backContact = document.getElementById('backContact');
     backLoad = document.getElementById('backLoad');
+    backSave = document.getElementById('backSave');
     savedGamesHTML = document.getElementById('savedGames');
-    load = document.getElementById('load');
-    save = document.getElementById('save');
+    load = document.getElementById('loadBoard');
+    save = document.getElementById('saveBoard');
     sendContact = document.getElementById('sendContact');
     contactName = document.getElementById('contactName');
     contactEmail = document.getElementById('contactEmail');
@@ -38,8 +39,9 @@ var init = ()=> {
     contact.onclick = goContact;
     home.onclick = goHome;
     backContact.onclick = goHome;
+    backSave.onclick = goGame;
     backLoad.onclick = goGame;
-    save.onclick = saveGame;
+    save.onclick = goSave;
     load.onclick = goLoad;
     sendContact.onclick = validateForm;
     goHome();

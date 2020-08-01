@@ -104,6 +104,9 @@ textarea{
     height: 25px;
     background-color: red;
 }
+.centerText{
+    text-align: center;
+}
 #winDescription{
     text-align: center;
 }
